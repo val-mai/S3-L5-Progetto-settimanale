@@ -1,0 +1,71 @@
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    height: 100vh;
+}
+
+.calcolatrice {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.display {
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+
+.display div {
+    padding-right: 10px;
+}
+
+#prev {
+    font-size: 1.5rem;
+    background-color: black;
+    border: none;
+    width: 99%;
+    text-align: end;
+    color: rgba(255,255,255,0.7);
+}
+
+#now {
+    font-size: 3rem;
+    color: white;
+    background-color: black;
+    border: none;
+    text-align: end;
+    width: 99%;
+}
+
+.tastiera {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4,1fr);
+}
+
+.tastiera button {
+    font-size: 1em;
+    padding: 1em;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.tastiera button:hover {
+    background-color: aquamarine;
+}
+
+#equal {
+    grid-column: span 3;
+}
