@@ -11,8 +11,9 @@ body{
 }
 
 .calcolatrice {
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
+    box-shadow: 3px 3px 5px black;
 }
 
 .display {
@@ -44,7 +45,7 @@ body{
     background-color: black;
     border: none;
     text-align: end;
-    width: 99%;
+    width: 100%;
 }
 
 .tastiera {
@@ -67,5 +68,5 @@ body{
 }
 
 #equal {
-    grid-column: span 3;
+    grid-column: span 2;
 }

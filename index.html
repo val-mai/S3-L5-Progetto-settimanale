@@ -26,23 +26,24 @@
                 </div>
             </div>
             <div class="tastiera">
-                <button id="7" onclick="appendNum(7)">7</button>
-                <button id="8" onclick="appendNum(8)">8</button>
-                <button id="9" onclick="appendNum(9)">9</button>
+                <button onclick="clearAll()">C</button>
+                <button onclick="del()">DEL</button>
+                <button onclick="changeSign()">+/-</button>
                 <button onclick="operation('/')">/</button>
-                <button id="4" onclick="appendNum(4)">4</button>
-                <button id="5" onclick="appendNum(5)">5</button>
-                <button id="6" onclick="appendNum(6)">6</button>
+                <button onclick="appendNum(7)">7</button>
+                <button onclick="appendNum(8)">8</button>
+                <button onclick="appendNum(9)">9</button>
                 <button onclick="operation('*')">x</button>
+                <button onclick="appendNum(4)">4</button>
+                <button onclick="appendNum(5)">5</button>
+                <button onclick="appendNum(6)">6</button>
+                <button onclick="operation('-')">-</button>
                 <button onclick="appendNum(1)">1 </button>
                 <button onclick="appendNum(2)">2</button>
                 <button onclick="appendNum(3)">3</button>
-                <button onclick="operation('-')">-</button>
-                <button onclick="clearAll()">C</button>
-                <button onclick="appendNum(0)">0</button>
-                <button onclick="appendNum('.')">.</button>
                 <button onclick="operation('+')">+</button>
-                <button onclick="del()">DEL</button>
+                <button onclick="appendNum('.')">.</button>
+                <button onclick="appendNum(0)">0</button>
                 <button id="equal" onclick="eval()">=</button>
             </div>
         </div>
