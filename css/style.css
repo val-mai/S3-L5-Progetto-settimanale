@@ -53,7 +53,7 @@ body{
     justify-content: center;
     align-items: center;
     grid-template-columns: repeat(4,1fr);
-    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
 }
 
 .tastiera button {

@@ -1,7 +1,6 @@
 let prev;
 let now;
 let operand;
-let evaluated;
 
 function appendNum(number) {
     if (number === '.' && document.getElementById('now').value.includes('.')) {
@@ -10,6 +9,7 @@ function appendNum(number) {
         document.getElementById('now').value = document.getElementById('now').value + number;
     }
 }
+
 function clearAll() {
     document.getElementById('now').value = "";
     document.getElementById('prev').value = "";
@@ -20,38 +20,50 @@ function del() {
 }
 
 function operation(operatore) {
-    if (document.getElementById('prev').value === "" && document.getElementById('now').value === "") {
-        return
-    } else if (document.getElementById('prev').value !== "" && document.getElementById('now').value !== "") {
-        eval();
-        operand = operatore;
-        document.getElementById('prev').value = document.getElementById('now').value + ' ' + operatore + ' ';
-        document.getElementById('now').value = "";
-        prev = evaluated;
+    if (document.getElementById('now').value === "") {
+        return;
     } else {
-        operand = operatore;
-        prev = parseFloat(document.getElementById('now').value);
-        document.getElementById('prev').value = document.getElementById('prev').value + document.getElementById('now').value + ' ' + operatore + ' ';
-        document.getElementById('now').value = "";
+
+        if (document.getElementById('prev').value === "" && document.getElementById('now').value === "") {
+            return
+        } else if (document.getElementById('prev').value !== "" && document.getElementById('now').value !== "") {
+            eval();
+            operand = operatore;
+            document.getElementById('prev').value = document.getElementById('now').value + ' ' + operatore + ' ';
+            document.getElementById('now').value = "";
+            prev = evaluated;
+        } else {
+            operand = operatore;
+            prev = parseFloat(document.getElementById('now').value);
+            document.getElementById('prev').value = document.getElementById('prev').value + document.getElementById('now').value + ' ' + operatore + ' ';
+            document.getElementById('now').value = "";
+        }
     }
 }
 
 function eval() {
     if (document.getElementById('prev').value != "") {
         now = parseFloat(document.getElementById('now').value);
-        document.getElementById('prev').value = document.getElementById('prev').value + document.getElementById('now').value;
-        if (operand == '+') {
-            evaluated = prev + now;
-            document.getElementById('now').value = evaluated;
-        } else if (operand == '-') {
-            evaluated = prev - now;
-            document.getElementById('now').value = evaluated;
-        } else if (operand == '/') {
-            evaluated = prev / now;
-            document.getElementById('now').value = evaluated;
-        } else if (operand == '*') {
-            evaluated = prev * now;
-            document.getElementById('now').value = evaluated;
+        if (document.getElementById('prev').value.includes('=')) {
+            document.getElementById('prev').value = document.getElementById('now').value;
+            prev = now;
+            now = parseFloat(document.getElementById('now').value);
+            evaluated = now;
+        } else {
+            document.getElementById('prev').value = document.getElementById('prev').value + document.getElementById('now').value + ' = ';
+            if (operand == '+') {
+                evaluated = prev + now;
+                document.getElementById('now').value = evaluated;
+            } else if (operand == '-') {
+                evaluated = prev - now;
+                document.getElementById('now').value = evaluated;
+            } else if (operand == '/') {
+                evaluated = prev / now;
+                document.getElementById('now').value = evaluated;
+            } else if (operand == '*') {
+                evaluated = prev * now;
+                document.getElementById('now').value = evaluated;
+            }
         }
     } else {
         return
