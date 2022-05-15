@@ -6,16 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcolatrice</title>
-    <meta name="description" content="Semplice calcolatrice in JS">
+    <meta name="description" content="Calcolatrice in JS">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
     <div class="container">
+        <h1>Calcolatrice <br> in JS</h1>
         <div class="calcolatrice">
             <div class="display">
                 <div class="prev">
@@ -26,25 +30,25 @@
                 </div>
             </div>
             <div class="tastiera">
-                <button onclick="clearAll()">C</button>
-                <button onclick="del()">DEL</button>
-                <button onclick="changeSign()">+/-</button>
-                <button onclick="operation('/')">/</button>
+                <button class="topleft" onclick="clearAll()"><i class="fa-solid fa-c"></i></button>
+                <button class="yw" onclick="operation('/')"><i class="fa-solid fa-divide"></i></button>
+                <button class="yw" onclick="operation('*')"><i class="fa-solid fa-xmark"></i></button>
+                <button class="yw topright" onclick="del()"><i class="fa-solid fa-delete-left"></i></button>
                 <button onclick="appendNum(7)">7</button>
                 <button onclick="appendNum(8)">8</button>
                 <button onclick="appendNum(9)">9</button>
-                <button onclick="operation('*')">x</button>
+                <button class="yw" onclick="operation('-')"><i class="fa-solid fa-minus"></i></button>
                 <button onclick="appendNum(4)">4</button>
                 <button onclick="appendNum(5)">5</button>
                 <button onclick="appendNum(6)">6</button>
-                <button onclick="operation('-')">-</button>
+                <button class="yw" onclick="operation('+')"><i class="fa-solid fa-plus"></i></button>
                 <button onclick="appendNum(1)">1 </button>
                 <button onclick="appendNum(2)">2</button>
                 <button onclick="appendNum(3)">3</button>
-                <button onclick="operation('+')">+</button>
-                <button onclick="appendNum('.')">.</button>
+                <button id="equal" onclick="eval()"><i class="fa-solid fa-equals"></i></button>
+                <button class="bottomleft" onclick="appendNum('.')">.</button>
                 <button onclick="appendNum(0)">0</button>
-                <button id="equal" onclick="eval()">=</button>
+                <button onclick="changeSign()"><i class="fa-solid fa-plus-minus"></i></button>
             </div>
         </div>
     </div>

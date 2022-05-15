@@ -42,7 +42,10 @@ function operation(operatore) {
 }
 
 function eval() {
-    if (document.getElementById('prev').value != "") {
+
+    if (document.getElementById('prev').value === document.getElementById('now').value) {
+        return;
+    } else if (document.getElementById('prev').value != "") {
         now = parseFloat(document.getElementById('now').value);
         if (document.getElementById('prev').value.includes('=')) {
             document.getElementById('prev').value = document.getElementById('now').value;
